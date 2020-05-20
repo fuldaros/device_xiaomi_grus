@@ -30,7 +30,6 @@
 #include "SDMController.h"
 #include "SunlightEnhancement.h"
 
-
 using android::OK;
 using android::sp;
 using android::status_t;
@@ -49,7 +48,6 @@ using ::vendor::lineage::livedisplay::V2_0::implementation::DisplayModesSDM;
 using ::vendor::lineage::livedisplay::V2_0::implementation::PictureAdjustment;
 using ::vendor::lineage::livedisplay::V2_0::implementation::SDMController;
 using ::vendor::lineage::livedisplay::V2_0::implementation::SunlightEnhancement;
-
 
 int main() {
     // Vendor backend
@@ -115,13 +113,10 @@ int main() {
         goto shutdown;
     }
 
-
+<<<<<<< HEAD
     if (!dms->isSupported() && !pa->isSupported()) {
         // SDM backend isn't ready yet, so restart and try again
-
-        goto shutdown;
-    }
-
+=======
     // SunlightEnhancement
     se = new SunlightEnhancement();
     if (se == nullptr) {
@@ -130,10 +125,7 @@ int main() {
         goto shutdown;
     }
 
-    if (!DisplayModes::isSupported() && !pa->isSupported()) {
-        // Backend isn't ready yet, so restart and try again
-
-        goto shutdown;
+    if (!Disp        goto shutdown;
     }
 
     configureRpcThreadpool(1, true /*callerWillJoin*/);
