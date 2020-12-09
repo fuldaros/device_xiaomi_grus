@@ -1,0 +1,14 @@
+[
+  {
+    "repository": "fuldaros/kernel_xiaomi_grus",
+    "target_path": "kernel/xiaomi/grus",
+    "revision": "reborn",
+    "remote": "github"
+  },
+  {
+    "repository": "fuldaros/vendor_xiaomi_grus",
+    "target_path": "vendor/xiaomi/grus",
+    "revision": "Q",
+    "remote": "github"
+  }
+]

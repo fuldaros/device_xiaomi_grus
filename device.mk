@@ -23,6 +23,7 @@ $(call inherit-product, $(LOCAL_PATH)/configs/phone-xhdpi-6144-dalvik-heap.mk)
 
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
+DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay-lineage
 
 PRODUCT_ENFORCE_RRO_TARGETS := *
 
@@ -432,8 +433,8 @@ PRODUCT_PACKAGES += \
     libtinyxml2
 
 # Trust HAL
-# PRODUCT_PACKAGES += \
-#     lineage.trust@1.0-service
+ PRODUCT_PACKAGES += \
+     lineage.trust@1.0-service
 
 # USB
 PRODUCT_PACKAGES += \
@@ -534,6 +535,10 @@ PRODUCT_PACKAGES += \
 # ANT+
 PRODUCT_PACKAGES += \
     AntHalService
+
+# Display calibration
+PRODUCT_PACKAGES += \
+    vendor.lineage.livedisplay@2.0-service.xiaomi
 
 # vndfwk
 PRODUCT_PACKAGES += \
