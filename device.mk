@@ -538,7 +538,7 @@ PRODUCT_PACKAGES += \
 
 # Display calibration
 PRODUCT_PACKAGES += \
-    vendor.lineage.livedisplay@2.0-service.xiaomi
+    vendor.lineage.livedisplay@2.0-service.xiaomi_sdm710
 
 # vndfwk
 PRODUCT_PACKAGES += \
