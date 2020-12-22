@@ -14,12 +14,10 @@
  * limitations under the License.
  */
 
-#ifndef VENDOR_LINEAGE_LIVEDISPLAY_V2_0_SUNLIGHTENHANCEMENT_H
-#define VENDOR_LINEAGE_LIVEDISPLAY_V2_0_SUNLIGHTENHANCEMENT_H
+#ifndef VENDOR_LINEAGE_LIVEDISPLAY_V2_0_ADAPTIVEBACKLIGHT_H
+#define VENDOR_LINEAGE_LIVEDISPLAY_V2_0_ADAPTIVEBACKLIGHT_H
 
-#include <hidl/MQDescriptor.h>
-#include <hidl/Status.h>
-#include <vendor/lineage/livedisplay/2.0/ISunlightEnhancement.h>
+#include <vendor/lineage/livedisplay/2.0/IAdaptiveBacklight.h>
 
 namespace vendor {
 namespace lineage {
@@ -28,16 +26,17 @@ namespace V2_0 {
 namespace implementation {
 
 using ::android::hardware::Return;
-using ::android::hardware::Void;
-using ::android::sp;
 
-class SunlightEnhancement : public ISunlightEnhancement {
-  public:
+class AdaptiveBacklight : public IAdaptiveBacklight {
+   public:
     bool isSupported();
 
-    // Methods from ::vendor::lineage::livedisplay::V2_0::ISunlightEnhancement follow.
+    // Methods from ::vendor::lineage::livedisplay::V2_0::IAdaptiveBacklight follow.
     Return<bool> isEnabled() override;
     Return<bool> setEnabled(bool enabled) override;
+
+   private:
+    bool mEnabled = false;
 };
 
 }  // namespace implementation
@@ -46,4 +45,4 @@ class SunlightEnhancement : public ISunlightEnhancement {
 }  // namespace lineage
 }  // namespace vendor
 
-#endif  // VENDOR_LINEAGE_LIVEDISPLAY_V2_0_SUNLIGHTENHANCEMENT_H
+#endif  // VENDOR_LINEAGE_LIVEDISPLAY_V2_0_ADAPTIVEBACKLIGHT_H

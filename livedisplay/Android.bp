@@ -14,20 +14,32 @@
 // limitations under the License.
 
 cc_binary {
-    name: "vendor.lineage.livedisplay@2.0-service.xiaomi_sdm710",
-    init_rc: ["vendor.lineage.livedisplay@2.0-service.xiaomi_sdm710.rc"],
-    defaults: ["hidl_defaults"],
     relative_install_path: "hw",
-    srcs: [
-        "SunlightEnhancement.cpp",
-        "service.cpp",
-    ],
+    defaults: ["hidl_defaults"],
     vendor: true,
+    name: "vendor.lineage.livedisplay@2.0-service.xiaomi",
+    init_rc: ["vendor.lineage.livedisplay@2.0-service.xiaomi.rc"],
+    header_libs: ["qti_kernel_headers",
+                  "libhardware_headers"],
+    srcs: [
+        "service.cpp",
+    	"AdaptiveBacklight.cpp",
+    	"ColorEnhancement.cpp",
+    	"DisplayModes.cpp",
+    	"DisplayModesSDM.cpp",
+    	"PictureAdjustment.cpp",
+    	"SDMController.cpp",
+    	"Utils.cpp"
+    ],
     shared_libs: [
         "libbase",
         "libbinder",
+        "libcutils",
         "libhidlbase",
+        "libhidltransport",
+        "liblog",
         "libutils",
-        "vendor.lineage.livedisplay@2.0",
+    	"vendor.lineage.livedisplay@2.0"
     ],
 }
+
