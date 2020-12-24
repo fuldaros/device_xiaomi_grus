@@ -115,13 +115,6 @@ int main() {
         goto shutdown;
     }
 
-
-    if (!dms->isSupported() && !pa->isSupported()) {
-        // SDM backend isn't ready yet, so restart and try again
-
-        goto shutdown;
-    }
-
     // SunlightEnhancement
     se = new SunlightEnhancement();
     if (se == nullptr) {
@@ -130,11 +123,12 @@ int main() {
         goto shutdown;
     }
 
-    if (!DisplayModes::isSupported() && !pa->isSupported()) {
-        // Backend isn't ready yet, so restart and try again
+    if (!dms->isSupported() && !pa->isSupported()) {
+        // SDM backend isn't ready yet, so restart and try again
 
         goto shutdown;
     }
+
 
     configureRpcThreadpool(1, true /*callerWillJoin*/);
 

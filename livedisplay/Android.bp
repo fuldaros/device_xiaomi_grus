@@ -19,7 +19,7 @@ cc_binary {
     vendor: true,
     name: "vendor.lineage.livedisplay@2.0-service.xiaomi",
     init_rc: ["vendor.lineage.livedisplay@2.0-service.xiaomi.rc"],
-    header_libs: ["qti_kernel_headers",
+    header_libs: ["generated_kernel_headers",
                   "libhardware_headers"],
     srcs: [
         "SunlightEnhancement.cpp",
@@ -37,7 +37,6 @@ cc_binary {
         "libbinder",
         "libcutils",
         "libhidlbase",
-        "libhidltransport",
         "liblog",
         "libutils",
     	"vendor.lineage.livedisplay@2.0"
